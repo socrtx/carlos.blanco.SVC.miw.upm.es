@@ -14,11 +14,19 @@ echo M2_HOME   --- %M2_HOME%
 echo .
 cd %workspace%
 
-echo ============ mvn clean verify (profile: develop) =======================================================
+echo ============ mvn -ff clean test (profile: develop) ============
 echo .
-call mvn clean verify --settings settings.xml
+call mvn clean test   -Denvironment.type=develop --settings settings.xml
 pause
+exit
 
+:errorDevelop
+echo .
+echo .
+echo .
+echo ########  ERRORES de test en Develop
+pause
+exit
 
 
 

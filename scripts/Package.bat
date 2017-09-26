@@ -16,18 +16,15 @@ cd %workspace%
 
 echo ============ mvn -ff clean test (profile: develop) ============
 echo .
-call mvn -ff clean test
+call mvn clean test   -Denvironment.type=develop --settings settings.xml
+
 if errorLevel 1 goto errorDevelop
 
 
 echo ============ mvn -Dmaven.test.skip=true package -Denvironment.type=preproduction ============
 echo .
 call mvn -Dmaven.test.skip=true package -Denvironment.type=preproduction
-if errorLevel 1 goto errorPreproduction
 
-echo ============ mvn -Dmaven.test.skip=true verify -Denvironment.type=preproduction  ============
-echo .
-call mvn -Dmaven.test.skip=true verify -Denvironment.type=preproduction 
 if errorLevel 1 goto errorPreproduction
 
 pause
