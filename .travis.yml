@@ -8,11 +8,11 @@ branches:
 notifications:
   email:
     recipients:
-    - architect@gmail.com
+    - socrtx@gmail.com
 services:
 - mysql
 before_install:
-- mysql -e 'CREATE DATABASE IF NOT EXISTS bd;'
+- mysql -e 'CREATE DATABASE IF NOT EXISTS karlos_test;'
 script:
 #Test unitario y de integracion en develop
 - mvn verify --settings settings.xml
