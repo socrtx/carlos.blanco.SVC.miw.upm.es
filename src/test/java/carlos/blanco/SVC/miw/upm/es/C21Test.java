@@ -15,12 +15,12 @@ public class C21Test {
     
     @Test
     public void testM1() {
-        assertEquals("", c21.m1());
+        assertEquals("m1", c21.m1());
     }
     
     @Test
     public void testM2() {
-        assertEquals("", c21.m2());
+        assertEquals("m2", c21.m2());
     }
 
 }
